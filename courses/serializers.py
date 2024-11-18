@@ -1,5 +1,6 @@
 from rest_framework import serializers
 
+from students.models import Student
 from users.models import User
 from .models import Course, Enrollment
 
@@ -14,7 +15,7 @@ class CourseSerializer(serializers.ModelSerializer):
 
 class EnrollmentSerializer(serializers.ModelSerializer):
     course_id = serializers.PrimaryKeyRelatedField(queryset=Course.objects.all())
-    student_id = serializers.StringRelatedField()
+    student_id = serializers.PrimaryKeyRelatedField(queryset=Student.objects.all())
 
     class Meta:
         model = Enrollment

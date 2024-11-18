@@ -11,21 +11,20 @@ class CourseListView(generics.ListCreateAPIView):
     serializer_class = CourseSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend, OrderingFilter, SearchFilter]
-    filterset_fields = ['teacher_id']
+    filterset_fields = ['teacher_id', 'created_at']
     search_fields = ['name', 'description']
     ordering_fields = ['name', 'id']
 
-
-def get_queryset(self):
-        user = self.request.user
-        if user.role == 'student':
-            return Course.objects.filter(enrollments__student=user)
-        elif user.role == 'teacher':
-            return Course.objects.filter(teacher=user)
-        elif user.role == 'admin':
-            return Course.objects.all()
-        else:
-            return Course.objects.none()
+    def get_queryset(self):
+            user = self.request.user
+            if user.role == 'student':
+                return Course.objects.filter(enrollments__student_id=user)
+            elif user.role == 'teacher':
+                return Course.objects.filter(teacher_id=user)
+            elif user.role == 'admin':
+                return Course.objects.all()
+            else:
+                return Course.objects.none()
 
 
 class CourseDetailView(generics.RetrieveUpdateDestroyAPIView):

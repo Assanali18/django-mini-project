@@ -5,9 +5,9 @@ from courses.models import Course
 
 
 class GradeSerializer(serializers.ModelSerializer):
-    student_id = serializers.PrimaryKeyRelatedField(read_only=True)
-    course_id = serializers.PrimaryKeyRelatedField(read_only=True)
-    teacher_id = serializers.StringRelatedField(read_only=True)
+    student_id = serializers.PrimaryKeyRelatedField(queryset=User.objects.filter(role='student'))
+    course_id = serializers.PrimaryKeyRelatedField(queryset=Course.objects.all())
+    teacher_id = serializers.PrimaryKeyRelatedField(read_only=True)
 
     class Meta:
         model = Grade
