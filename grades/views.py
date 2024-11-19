@@ -1,4 +1,6 @@
 from rest_framework import generics, permissions
+
+from analytics.utils import send_event_to_google_analytics
 from .models import Grade
 from .serializers import GradeSerializer
 from users.permissions import IsTeacher, IsAdmin, IsStudentOrTeacher
@@ -22,7 +24,6 @@ class BaseGradeView:
         return Grade.objects.none()
 
 
-
 class GradeListView(BaseGradeView, generics.ListCreateAPIView):
     """
         get:
@@ -44,6 +45,10 @@ class GradeListView(BaseGradeView, generics.ListCreateAPIView):
 
     def get_queryset(self):
         return self.get_queryset_by_role()
+
+    def list(self, request, *args, **kwargs):
+        send_event_to_google_analytics('Grades', 'List', request.user.username)
+        return super().list(request, *args, **kwargs)
 
 
 class GradeDetailView(BaseGradeView, generics.RetrieveUpdateDestroyAPIView):

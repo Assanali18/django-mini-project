@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'grades',
     'attendance',
     'notifications',
+    'analytics',
 ]
 
 MIDDLEWARE = [
@@ -61,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'analytics.middleware.APILogMiddleware',
 ]
 
 ROOT_URLCONF = 'wsp.urls'
@@ -176,6 +178,12 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
     ],
     'JSON_INDENT': 4,
+    'DEFAULT_THROTTLE_CLASSES': [
+        'rest_framework.throttling.UserRateThrottle',
+    ],
+    'DEFAULT_THROTTLE_RATES': {
+        'user': '100/day',
+    },
 }
 
 

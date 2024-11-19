@@ -1,6 +1,8 @@
 from rest_framework import generics, permissions
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter, SearchFilter
+
+from analytics.models import PopularCourse
 from .models import Course, Enrollment
 from .serializers import CourseSerializer, EnrollmentSerializer
 from users.permissions import IsTeacher, IsAdmin
@@ -73,6 +75,13 @@ class CourseDetailView(generics.RetrieveUpdateDestroyAPIView):
     def perform_update(self, serializer):
         serializer.save()
         cache.delete_pattern('courses_*')
+
+    def retrieve(self, request, *args, **kwargs):
+        course = self.get_object()
+        popular_course, created = PopularCourse.objects.get_or_create(course=course)
+        popular_course.access_count += 1
+        popular_course.save()
+        return super().retrieve(request, *args, **kwargs)
 
 
 class EnrollmentView(generics.CreateAPIView):
