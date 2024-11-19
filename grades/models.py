@@ -12,3 +12,6 @@ class Grade(models.Model):
 
     def __str__(self):
         return f"{self.student_id.username} - {self.course_id.name} - {self.grade}"
+
+    class Meta:
+        ordering = ['id']

@@ -105,3 +105,220 @@ WARNING 2024-11-19 19:12:55,776 log Not Found: /favicon.ico
 WARNING 2024-11-19 19:12:55,777 basehttp "GET /favicon.ico HTTP/1.1" 404 3285
 INFO 2024-11-19 19:13:54,793 autoreload C:\Programming\django-mini-project-2\wsp\settings.py changed, reloading.
 INFO 2024-11-19 19:13:56,577 autoreload Watching for file changes with StatReloader
+WARNING 2024-11-19 21:20:07,385 log Not Found: /courses/
+WARNING 2024-11-19 21:20:09,478 log Not Found: /courses/1/
+WARNING 2024-11-19 21:20:10,542 log Not Found: /courses/1/
+WARNING 2024-11-19 21:20:11,257 log Not Found: /courses/
+WARNING 2024-11-19 21:20:11,956 log Not Found: /courses/1/
+WARNING 2024-11-19 21:20:12,658 log Not Found: /courses/1/
+WARNING 2024-11-19 21:20:13,372 log Not Found: /courses/
+WARNING 2024-11-19 21:20:14,080 log Not Found: /courses/1/
+INFO 2024-11-19 21:46:35,988 autoreload Watching for file changes with StatReloader
+WARNING 2024-11-19 21:46:46,087 log Not Found: /courses/
+WARNING 2024-11-19 21:46:48,216 log Not Found: /courses/1/
+WARNING 2024-11-19 21:46:49,264 log Not Found: /courses/1/
+WARNING 2024-11-19 21:46:49,969 log Not Found: /courses/
+WARNING 2024-11-19 21:46:50,673 log Not Found: /courses/1/
+WARNING 2024-11-19 21:46:51,389 log Not Found: /courses/1/
+WARNING 2024-11-19 21:46:52,095 log Not Found: /courses/
+WARNING 2024-11-19 21:46:52,800 log Not Found: /courses/1/
+ERROR 2024-11-19 21:50:08,816 log Internal Server Error: /api/courses/
+Traceback (most recent call last):
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django_redis\client\default.py", line 260, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\rest_framework\generics.py", line 243, in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\courses\views.py", line 23, in get_queryset
+    cached_data = cache.get(cache_key)
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django_redis\client\default.py", line 258, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\redis\commands\core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\redis\client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\redis\client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\redis\connection.py", line 1422, in get_connection
+    connection.connect()
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\redis\connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+WARNING 2024-11-19 21:50:11,105 log Forbidden: /api/courses/1/
+ERROR 2024-11-19 21:50:17,207 log Internal Server Error: /api/courses/
+Traceback (most recent call last):
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django_redis\cache.py", line 99, in _get
+    return self.client.get(key, default=default, version=version, client=client)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django_redis\client\default.py", line 260, in get
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\rest_framework\generics.py", line 243, in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+                                    ^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\courses\views.py", line 23, in get_queryset
+    cached_data = cache.get(cache_key)
+                  ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django_redis\cache.py", line 92, in get
+    value = self._get(key, default, version, client)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\django_redis\client\default.py", line 258, in get
+    value = client.get(key)
+            ^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\redis\commands\core.py", line 1822, in get
+    return self.execute_command("GET", name, keys=[name])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\redis\client.py", line 559, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\redis\client.py", line 565, in _execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\redis\connection.py", line 1422, in get_connection
+    connection.connect()
+  File "C:\Programming\django-mini-project-2\venv\Lib\site-packages\redis\connection.py", line 363, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. Подключение не установлено, т.к. конечный компьютер отверг запрос на подключение.
+WARNING 2024-11-19 21:50:17,945 log Bad Request: /api/courses/1/
+INFO 2024-11-19 21:51:42,291 views Cache miss for user  - loading courses from DB
+INFO 2024-11-19 21:51:42,308 views Cache hit for user  - courses
+WARNING 2024-11-19 21:51:44,440 log Forbidden: /api/courses/1/
+INFO 2024-11-19 21:51:48,341 views Cache hit for user  - courses
+WARNING 2024-11-19 21:51:49,054 log Bad Request: /api/courses/1/
+INFO 2024-11-19 21:54:04,697 views Cache hit for user  - courses
+INFO 2024-11-19 21:55:15,418 views Cache miss for user teacher1@example.com - loading courses from DB
+INFO 2024-11-19 21:55:15,425 basehttp "GET /api/courses/ HTTP/1.1" 200 676
+INFO 2024-11-19 21:57:43,192 autoreload C:\Programming\django-mini-project-2\courses\views.py changed, reloading.
+INFO 2024-11-19 21:57:44,139 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 21:57:45,522 views Cache miss for user  - loading courses from DB
+INFO 2024-11-19 21:57:57,109 views Cache hit for user teacher1@example.com - courses
+INFO 2024-11-19 21:57:57,114 basehttp "GET /api/courses/ HTTP/1.1" 200 676
+WARNING 2024-11-19 21:58:23,434 log Bad Request: /api/courses/1/
+WARNING 2024-11-19 22:01:37,259 log Forbidden: /api/courses/1/
+INFO 2024-11-19 22:02:00,771 views Cache miss for user  - loading courses from DB
+INFO 2024-11-19 22:02:00,778 views Cache hit for user  - courses
+INFO 2024-11-19 22:02:48,094 views Cache hit for user  - courses
+INFO 2024-11-19 22:02:48,099 views Cache hit for user  - courses
+WARNING 2024-11-19 22:02:49,530 log Forbidden: /api/courses/1/
+INFO 2024-11-19 22:02:53,474 views Cache hit for user  - courses
+INFO 2024-11-19 22:03:34,137 views Cache miss for user  - loading courses from DB
+INFO 2024-11-19 22:03:34,142 views Cache hit for user  - courses
+INFO 2024-11-19 22:06:03,328 views Cache hit for user  - courses
+INFO 2024-11-19 22:06:03,333 views Cache hit for user  - courses
+INFO 2024-11-19 22:09:27,348 views Cache miss for user  - loading courses from DB
+INFO 2024-11-19 22:09:27,354 views Cache hit for user  - courses
+INFO 2024-11-19 22:12:15,481 autoreload C:\Programming\django-mini-project-2\courses\models.py changed, reloading.
+INFO 2024-11-19 22:12:16,444 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:12:17,716 views Cache hit for user  - courses
+INFO 2024-11-19 22:12:17,721 views Cache hit for user  - courses
+INFO 2024-11-19 22:12:31,060 views Cache hit for user  - courses
+INFO 2024-11-19 22:12:31,065 views Cache hit for user  - courses
+WARNING 2024-11-19 22:12:32,490 log Forbidden: /api/courses/1/
+INFO 2024-11-19 22:12:36,372 views Cache hit for user  - courses
+INFO 2024-11-19 22:18:09,782 autoreload C:\Programming\django-mini-project-2\grades\models.py changed, reloading.
+INFO 2024-11-19 22:18:10,750 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:19:25,256 autoreload C:\Programming\django-mini-project-2\grades\views.py changed, reloading.
+INFO 2024-11-19 22:19:26,185 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:22:58,328 autoreload C:\Programming\django-mini-project-2\grades\views.py changed, reloading.
+INFO 2024-11-19 22:22:59,417 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:23:23,759 autoreload C:\Programming\django-mini-project-2\grades\views.py changed, reloading.
+INFO 2024-11-19 22:23:24,799 autoreload Watching for file changes with StatReloader
+WARNING 2024-11-19 22:25:42,336 log Bad Request: /api/grades/1/
+WARNING 2024-11-19 22:26:38,404 log Bad Request: /api/grades/1/
+WARNING 2024-11-19 22:30:29,495 log Forbidden: /api/grades/1/
+INFO 2024-11-19 22:34:51,360 autoreload C:\Programming\django-mini-project-2\users\permissions.py changed, reloading.
+INFO 2024-11-19 22:34:52,300 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:35:07,055 autoreload C:\Programming\django-mini-project-2\grades\views.py changed, reloading.
+INFO 2024-11-19 22:35:07,951 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:44:58,761 views Cache miss for user  - loading courses from DB
+INFO 2024-11-19 22:44:58,767 views Cache hit for user  - courses
+WARNING 2024-11-19 22:45:00,191 log Forbidden: /api/courses/1/
+INFO 2024-11-19 22:45:04,200 views Cache hit for user  - courses
+WARNING 2024-11-19 22:45:09,211 log Forbidden: /api/grades/1/
+WARNING 2024-11-19 22:45:09,212 log Forbidden: /api/grades/1/
+INFO 2024-11-19 22:45:54,223 views Cache miss for user  - loading courses from DB
+INFO 2024-11-19 22:45:54,229 views Cache hit for user  - courses
+WARNING 2024-11-19 22:45:55,687 log Forbidden: /api/courses/1/
+INFO 2024-11-19 22:45:59,615 views Cache hit for user  - courses
+WARNING 2024-11-19 22:46:04,941 log Forbidden: /api/grades/1/
+WARNING 2024-11-19 22:46:04,942 log Forbidden: /api/grades/1/

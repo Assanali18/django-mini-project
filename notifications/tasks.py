@@ -42,7 +42,13 @@ def send_daily_report():
     )
     return 'Daily report sent to admin.'
 
+
 @shared_task
 def test_task():
     print("Test task executed")
     return "Task completed"
+
+
+@shared_task
+def add_numbers(x, y):
+    return x + y

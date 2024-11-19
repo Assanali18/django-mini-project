@@ -11,6 +11,9 @@ class Course(models.Model):
     def __str__(self):
         return f"Course ID: {self.id}, Name: {self.name}, Teacher: {self.teacher_id.username}"
 
+    class Meta:
+        ordering = ['id']
+
 
 class Enrollment(models.Model):
     student_id = models.ForeignKey(User, on_delete=models.CASCADE, limit_choices_to={'role': 'student'}, related_name='enrollments')

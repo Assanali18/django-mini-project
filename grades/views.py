@@ -1,12 +1,15 @@
 from rest_framework import generics, permissions
 from .models import Grade
 from .serializers import GradeSerializer
-from users.permissions import IsTeacher, IsAdmin
+from users.permissions import IsTeacher, IsAdmin, IsStudentOrTeacher
+
+import logging
 
 
+logger = logging.getLogger('custom')
 class BaseGradeView:
     """
-    Базовый класс для обработки фильтрации по ролям.
+    Base class for filtering grades based on user role.
     """
     def get_queryset_by_role(self):
         user = self.request.user
@@ -16,7 +19,9 @@ class BaseGradeView:
             return Grade.objects.filter(teacher_id=user)
         elif user.role == 'admin':
             return Grade.objects.all()
+        logger.info(f"Filtering grades for user {user.username}: {queryset}")
         return Grade.objects.none()
+
 
 
 class GradeListView(BaseGradeView, generics.ListCreateAPIView):
@@ -29,7 +34,7 @@ class GradeListView(BaseGradeView, generics.ListCreateAPIView):
 
 class GradeDetailView(BaseGradeView, generics.RetrieveUpdateDestroyAPIView):
     serializer_class = GradeSerializer
-    permission_classes = [permissions.IsAuthenticated, IsTeacher | IsAdmin]
+    permission_classes = [permissions.IsAuthenticated, IsStudentOrTeacher]
 
     def get_queryset(self):
         return self.get_queryset_by_role()

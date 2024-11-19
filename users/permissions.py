@@ -1,4 +1,5 @@
 from rest_framework import permissions
+from rest_framework.permissions import SAFE_METHODS, BasePermission
 
 
 class IsTeacher(permissions.BasePermission):
@@ -33,3 +34,26 @@ class IsAdmin(permissions.BasePermission):
     """
     def has_permission(self, request, view):
         return request.user.is_authenticated and request.user.role == 'admin'
+
+class IsStudentOrTeacher(BasePermission):
+    """
+    Custom permission:
+    - Students can view their own grades (GET).
+    - Teachers and admins can manage grades (GET, PUT, DELETE).
+    """
+    def has_object_permission(self, request, view, obj):
+        user = request.user
+
+        # Allow students to view their grades
+        if user.role == 'student' and request.method in SAFE_METHODS:
+            return obj.student_id == user
+
+        # Allow teachers to manage their assigned grades
+        if user.role == 'teacher':
+            return obj.teacher_id == user
+
+        # Allow admins full access
+        if user.role == 'admin':
+            return True
+
+        return False
