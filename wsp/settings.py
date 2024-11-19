@@ -229,6 +229,7 @@ LOGGING = {
     },
 }
 
+
 CELERY_BROKER_URL = 'redis://127.0.0.1:6379/1'  # Redis as a message broker
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'

@@ -103,3 +103,5 @@ INFO 2024-11-19 19:12:55,155 basehttp "GET /admin/django_celery_beat/periodictas
 INFO 2024-11-19 19:12:55,228 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
 WARNING 2024-11-19 19:12:55,776 log Not Found: /favicon.ico
 WARNING 2024-11-19 19:12:55,777 basehttp "GET /favicon.ico HTTP/1.1" 404 3285
+INFO 2024-11-19 19:13:54,793 autoreload C:\Programming\django-mini-project-2\wsp\settings.py changed, reloading.
+INFO 2024-11-19 19:13:56,577 autoreload Watching for file changes with StatReloader
