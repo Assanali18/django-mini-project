@@ -1,0 +1,15 @@
+INFO 2024-11-19 18:11:29,654 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:11:48,047 views New user registered: student1@example.com at 2024-11-19 13:11:48.047768+00:00
+INFO 2024-11-19 18:11:48,049 basehttp "POST /api/users/register/ HTTP/1.1" 201 76
+INFO 2024-11-19 18:12:32,198 autoreload C:\Programming\django-mini-project-2\users\views.py changed, reloading.
+INFO 2024-11-19 18:12:33,416 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:13:34,221 autoreload C:\Programming\django-mini-project-2\courses\views.py changed, reloading.
+INFO 2024-11-19 18:13:35,581 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:14:07,923 autoreload C:\Programming\django-mini-project-2\attendance\views.py changed, reloading.
+INFO 2024-11-19 18:14:09,537 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:14:38,228 autoreload C:\Programming\django-mini-project-2\courses\views.py changed, reloading.
+INFO 2024-11-19 18:14:39,928 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:14:49,439 views Cache miss for user teacher1@example.com - loading courses from DB
+INFO 2024-11-19 18:14:49,465 basehttp "GET /api/courses/ HTTP/1.1" 200 676
+INFO 2024-11-19 18:15:23,856 views Cache hit for user teacher1@example.com - courses
+INFO 2024-11-19 18:15:23,865 basehttp "GET /api/courses/ HTTP/1.1" 200 676

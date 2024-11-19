@@ -5,7 +5,9 @@ from rest_framework.views import APIView
 
 from .models import Attendance
 from .serializers import AttendanceSerializer, BulkAttendanceSerializer, BulkUpdateAttendanceSerializer
-from users.permissions import IsTeacher, IsAdmin
+from users.permissions import IsTeacher
+
+import logging
 
 
 class BaseAttendanceView:
@@ -35,7 +37,9 @@ class AttendanceListView(BaseAttendanceView, generics.ListCreateAPIView):
         user = self.request.user
         if user.role != 'teacher':
             raise PermissionError("Only teachers can mark attendance.")
-        serializer.save()
+        attendance = serializer.save()
+        logger = logging.getLogger('custom')
+        logger.info(f"Attendance marked for student {attendance.student_id} by teacher {user.email}")
 
 
 class BulkAttendanceView(APIView):
