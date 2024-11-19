@@ -13,3 +13,93 @@ INFO 2024-11-19 18:14:49,439 views Cache miss for user teacher1@example.com - lo
 INFO 2024-11-19 18:14:49,465 basehttp "GET /api/courses/ HTTP/1.1" 200 676
 INFO 2024-11-19 18:15:23,856 views Cache hit for user teacher1@example.com - courses
 INFO 2024-11-19 18:15:23,865 basehttp "GET /api/courses/ HTTP/1.1" 200 676
+INFO 2024-11-19 18:19:14,415 autoreload C:\Programming\django-mini-project-2\wsp\settings.py changed, reloading.
+INFO 2024-11-19 18:19:16,228 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:19:25,455 autoreload C:\Programming\django-mini-project-2\wsp\__init__.py changed, reloading.
+INFO 2024-11-19 18:19:27,492 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:21:47,247 autoreload C:\Programming\django-mini-project-2\wsp\settings.py changed, reloading.
+INFO 2024-11-19 18:21:53,558 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:22:14,453 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:22:55,024 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:23:02,601 basehttp "GET /admin HTTP/1.1" 301 0
+INFO 2024-11-19 18:23:02,648 basehttp "GET /admin/ HTTP/1.1" 302 0
+INFO 2024-11-19 18:23:02,872 basehttp "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4160
+INFO 2024-11-19 18:23:03,395 basehttp "GET /static/admin/css/base.css HTTP/1.1" 200 22092
+INFO 2024-11-19 18:23:03,427 basehttp "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2024-11-19 18:23:03,438 basehttp "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2804
+INFO 2024-11-19 18:23:03,448 basehttp "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2024-11-19 18:23:03,456 basehttp "GET /static/admin/css/responsive.css HTTP/1.1" 200 17972
+INFO 2024-11-19 18:23:03,482 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2024-11-19 18:23:03,522 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2024-11-19 18:23:03,831 basehttp "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2024-11-19 18:23:03,833 basehttp "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+WARNING 2024-11-19 18:23:04,107 log Not Found: /favicon.ico
+WARNING 2024-11-19 18:23:04,109 basehttp "GET /favicon.ico HTTP/1.1" 404 3285
+INFO 2024-11-19 18:23:07,422 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4323
+INFO 2024-11-19 18:24:31,435 basehttp "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2024-11-19 18:24:31,494 basehttp "GET /admin/ HTTP/1.1" 200 9168
+INFO 2024-11-19 18:24:31,585 basehttp "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2024-11-19 18:24:31,658 basehttp "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2024-11-19 18:24:31,658 basehttp "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2024-11-19 18:24:48,242 basehttp "GET /admin/django_celery_beat/periodictask/ HTTP/1.1" 200 13040
+INFO 2024-11-19 18:24:48,317 basehttp "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2024-11-19 18:24:48,342 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2024-11-19 18:24:48,368 basehttp "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2024-11-19 18:24:48,387 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+INFO 2024-11-19 18:24:48,379 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2024-11-19 18:24:48,398 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2024-11-19 18:24:48,404 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-11-19 18:24:48,412 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2024-11-19 18:24:48,439 basehttp "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2024-11-19 18:24:48,443 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2024-11-19 18:24:48,461 basehttp "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2024-11-19 18:24:48,461 basehttp "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9097
+INFO 2024-11-19 18:24:48,468 basehttp "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2024-11-19 18:24:48,468 basehttp "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2024-11-19 18:24:48,477 basehttp "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2024-11-19 18:24:48,477 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-11-19 18:24:48,483 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2024-11-19 18:24:48,522 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2024-11-19 18:24:48,632 basehttp "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2024-11-19 18:24:48,639 basehttp "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2024-11-19 18:24:48,640 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2024-11-19 18:24:48,683 basehttp "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2024-11-19 18:24:48,683 basehttp "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2024-11-19 18:24:48,820 basehttp "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2024-11-19 18:25:01,738 basehttp "GET /admin/django_celery_beat/periodictask/add/ HTTP/1.1" 200 34757
+INFO 2024-11-19 18:25:01,812 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-11-19 18:25:01,818 basehttp "GET /static/admin/css/forms.css HTTP/1.1" 200 8794
+INFO 2024-11-19 18:25:01,827 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2024-11-19 18:25:01,840 basehttp "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2024-11-19 18:25:01,846 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-11-19 18:25:01,848 basehttp "GET /static/admin/css/widgets.css HTTP/1.1" 200 11564
+INFO 2024-11-19 18:25:01,849 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2024-11-19 18:25:01,849 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2024-11-19 18:25:01,914 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2024-11-19 18:25:01,930 basehttp "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2024-11-19 18:25:01,930 basehttp "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2024-11-19 18:25:01,931 basehttp "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2024-11-19 18:25:02,063 basehttp "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2024-11-19 18:25:02,064 basehttp "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2024-11-19 18:26:02,810 basehttp "GET /admin/django_celery_beat/intervalschedule/add/?_to_field=id&_popup=1 HTTP/1.1" 200 8408
+INFO 2024-11-19 18:26:02,854 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-11-19 18:26:02,874 basehttp "GET /static/admin/js/inlines.js HTTP/1.1" 200 15526
+INFO 2024-11-19 18:26:03,001 basehttp "GET /static/admin/img/icon-unknown.svg HTTP/1.1" 200 655
+INFO 2024-11-19 18:26:11,063 basehttp "POST /admin/django_celery_beat/intervalschedule/add/?_to_field=id&_popup=1 HTTP/1.1" 200 329
+INFO 2024-11-19 18:26:11,092 basehttp "GET /static/admin/js/popup_response.js HTTP/1.1" 200 532
+INFO 2024-11-19 18:26:45,895 basehttp "POST /admin/django_celery_beat/periodictask/add/ HTTP/1.1" 302 0
+INFO 2024-11-19 18:26:45,923 basehttp "GET /admin/django_celery_beat/periodictask/ HTTP/1.1" 200 16261
+INFO 2024-11-19 18:26:45,965 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-11-19 18:26:45,973 basehttp "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2024-11-19 18:26:45,979 basehttp "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2024-11-19 18:39:05,493 autoreload C:\Programming\django-mini-project-2\notifications\tasks.py changed, reloading.
+INFO 2024-11-19 18:39:06,690 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:46:28,179 basehttp "GET /admin/django_celery_beat/periodictask/1/change/ HTTP/1.1" 200 35296
+INFO 2024-11-19 18:46:28,224 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2024-11-19 19:07:17,513 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 19:11:58,577 autoreload C:\Programming\django-mini-project-2\wsp\settings.py changed, reloading.
+INFO 2024-11-19 19:12:00,505 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 19:12:55,155 basehttp "GET /admin/django_celery_beat/periodictask/1/change/ HTTP/1.1" 200 35296
+INFO 2024-11-19 19:12:55,228 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2024-11-19 19:12:55,776 log Not Found: /favicon.ico
+WARNING 2024-11-19 19:12:55,777 basehttp "GET /favicon.ico HTTP/1.1" 404 3285

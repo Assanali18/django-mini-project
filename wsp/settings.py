@@ -38,13 +38,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'users',
     'rest_framework',
     'djoser',
     'corsheaders',
     'django_filters',
+    'django_celery_beat',
 
-
+    'users',
     'students',
     'courses',
     'grades',
@@ -228,4 +228,10 @@ LOGGING = {
         },
     },
 }
+
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/1'  # Redis as a message broker
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/1'
+
 
