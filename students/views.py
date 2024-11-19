@@ -14,6 +14,21 @@ logger = logging.getLogger(__name__)
 
 
 class StudentListView(generics.ListCreateAPIView):
+    """
+        get:
+        Retrieve a list of all students. Only accessible to admins.
+
+        post:
+        Add a new student.
+
+        Request body:
+        - `user`: The ID of the associated user.
+        - `dob`: The date of birth of the student.
+        - `registration_date`: The registration date.
+
+        Response:
+        - List of students with their details or the created student object.
+        """
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
     permission_classes = [permissions.IsAuthenticated, IsAdmin]
@@ -24,6 +39,22 @@ class StudentListView(generics.ListCreateAPIView):
 
 
 class StudentDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+        get:
+        Retrieve the details of a specific student.
+
+        put:
+        Update the details of a specific student.
+
+        delete:
+        Delete a student by their ID.
+
+        Parameters:
+        - `id`: The ID of the student.
+
+        Response:
+        - The updated or retrieved student details.
+        """
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
     permission_classes = [permissions.IsAuthenticated]

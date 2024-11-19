@@ -9,6 +9,22 @@ from django.utils.timezone import now
 
 
 class RegisterUserView(generics.CreateAPIView):
+    """
+        post:
+        Register a new user.
+
+        Request body:
+        - `username`: The desired username for the user.
+        - `email`: The email address of the user.
+        - `password`: The password for the account.
+        - `role`: The role of the user (e.g., 'student', 'teacher', 'admin').
+
+        Response:
+        - `id`: The ID of the created user.
+        - `username`: The username of the created user.
+        - `email`: The email of the created user.
+        - `role`: The role of the created user.
+        """
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [AllowAny]
@@ -20,6 +36,17 @@ class RegisterUserView(generics.CreateAPIView):
 
 
 class UserListView(generics.ListAPIView):
+    """
+        get:
+        Retrieve a list of all registered users. Only accessible to admins.
+
+        Response:
+        - List of user objects, each containing:
+          - `id`: The ID of the user.
+          - `username`: The username.
+          - `email`: The email address.
+          - `role`: The user's role.
+        """
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAdmin]
@@ -31,6 +58,22 @@ class UserListView(generics.ListAPIView):
 
 
 class UserDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+        get:
+        Retrieve the details of a specific user by their ID.
+
+        put:
+        Update the details of a specific user. Only accessible to admins.
+
+        delete:
+        Delete a user by their ID.
+
+        Parameters:
+        - `id`: The ID of the user.
+
+        Response:
+        - The updated or retrieved user details.
+        """
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [IsAdmin]

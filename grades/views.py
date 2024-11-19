@@ -19,12 +19,26 @@ class BaseGradeView:
             return Grade.objects.filter(teacher_id=user)
         elif user.role == 'admin':
             return Grade.objects.all()
-        logger.info(f"Filtering grades for user {user.username}: {queryset}")
         return Grade.objects.none()
 
 
 
 class GradeListView(BaseGradeView, generics.ListCreateAPIView):
+    """
+        get:
+        Retrieve a list of all grades for the authenticated user.
+
+        post:
+        Add a new grade. Only accessible to teachers.
+
+        Request body:
+        - `student_id`: The ID of the student.
+        - `course_id`: The ID of the course.
+        - `grade`: The grade to assign.
+
+        Response:
+        - List of grades or the created grade object.
+        """
     serializer_class = GradeSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -33,6 +47,22 @@ class GradeListView(BaseGradeView, generics.ListCreateAPIView):
 
 
 class GradeDetailView(BaseGradeView, generics.RetrieveUpdateDestroyAPIView):
+    """
+        get:
+        Retrieve the details of a specific grade.
+
+        put:
+        Update a specific grade. Only accessible to teachers or admins.
+
+        delete:
+        Delete a grade. Only accessible to teachers or admins.
+
+        Parameters:
+        - `id`: The ID of the grade.
+
+        Response:
+        - The updated or retrieved grade details.
+        """
     serializer_class = GradeSerializer
     permission_classes = [permissions.IsAuthenticated, IsStudentOrTeacher]
 

@@ -12,7 +12,7 @@ import logging
 
 class BaseAttendanceView:
     """
-    Базовый класс для обработки фильтрации по ролям.
+    Base class for different roles
     """
     def get_queryset_by_role(self):
         user = self.request.user
@@ -26,6 +26,21 @@ class BaseAttendanceView:
 
 
 class AttendanceListView(BaseAttendanceView, generics.ListCreateAPIView):
+    """
+        get:
+        Retrieve a list of all attendance records for the authenticated user.
+
+        post:
+        Add a new attendance record. Only accessible to teachers.
+
+        Request body:
+        - `student_id`: The ID of the student.
+        - `course_id`: The ID of the course.
+        - `status`: Attendance status (e.g., 'Present', 'Absent').
+
+        Response:
+        - List of attendance records or the created attendance record.
+        """
     queryset = Attendance.objects.all()
     serializer_class = AttendanceSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -43,6 +58,19 @@ class AttendanceListView(BaseAttendanceView, generics.ListCreateAPIView):
 
 
 class BulkAttendanceView(APIView):
+    """
+        post:
+        Create multiple attendance records in bulk. Only accessible to teachers.
+
+        Request body:
+        - A list of attendance records, each containing:
+          - `student_id`: The ID of the student.
+          - `course_id`: The ID of the course.
+          - `status`: Attendance status.
+
+        Response:
+        - A confirmation message indicating the number of records created.
+        """
     permission_classes = [IsAuthenticated, IsTeacher]
 
     def post(self, request):
@@ -54,6 +82,19 @@ class BulkAttendanceView(APIView):
 
 
 class AttendanceDetailView(BaseAttendanceView, generics.RetrieveUpdateAPIView):
+    """
+        get:
+        Retrieve the details of a specific attendance record.
+
+        put:
+        Update a specific attendance record.
+
+        Parameters:
+        - `id`: The ID of the attendance record.
+
+        Response:
+        - The updated or retrieved attendance details.
+        """
     serializer_class = AttendanceSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -74,6 +115,18 @@ class AttendanceDetailView(BaseAttendanceView, generics.RetrieveUpdateAPIView):
 
 
 class BulkUpdateAttendanceView(APIView):
+    """
+        put:
+        Update multiple attendance records in bulk. Only accessible to teachers.
+
+        Request body:
+        - A list of attendance records to update, each containing:
+          - `id`: The ID of the attendance record.
+          - Other fields to update (e.g., `status`).
+
+        Response:
+        - A confirmation message indicating the number of records updated.
+        """
     permission_classes = [permissions.IsAuthenticated, IsTeacher]
 
     def put(self, request):

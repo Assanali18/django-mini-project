@@ -6,6 +6,16 @@ from .models import Course, Enrollment
 
 
 class CourseSerializer(serializers.ModelSerializer):
+    """
+        Serializer for courses.
+
+        Fields:
+        - `id`: Course ID (read-only)
+        - `name`: Name of the course
+        - `description`: Description of the course
+        - `teacher_id`: Teacher assigned to the course
+        - `created_at`: Timestamp when the course was created
+    """
     teacher_id = serializers.PrimaryKeyRelatedField(queryset=User.objects.filter(role='teacher'))
 
     class Meta:

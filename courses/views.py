@@ -9,6 +9,21 @@ import logging
 
 
 class CourseListView(generics.ListCreateAPIView):
+    """
+    get:
+    Retrieve a list of all courses.
+
+    post:
+    Add a new course. Only accessible to authenticated users.
+
+    Request body:
+    - `name`: The name of the course.
+    - `description`: A brief description of the course.
+    - `teacher_id`: The ID of the teacher assigned to the course.
+
+    Response:
+    - List of courses or the created course object.
+    """
     queryset = Course.objects.all().order_by('id')
     serializer_class = CourseSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -35,6 +50,22 @@ class CourseListView(generics.ListCreateAPIView):
 
 
 class CourseDetailView(generics.RetrieveUpdateDestroyAPIView):
+    """
+        get:
+        Retrieve the details of a specific course.
+
+        put:
+        Update the details of a specific course.
+
+        delete:
+        Delete a course by its ID.
+
+        Parameters:
+        - `id`: The ID of the course.
+
+        Response:
+        - The updated or retrieved course details.
+        """
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     permission_classes = [permissions.IsAuthenticated, IsTeacher | IsAdmin]
@@ -45,6 +76,17 @@ class CourseDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 
 class EnrollmentView(generics.CreateAPIView):
+    """
+        post:
+        Enroll a student in a course.
+
+        Request body:
+        - `student_id`: The ID of the student enrolling.
+        - `course_id`: The ID of the course.
+
+        Response:
+        - The enrollment details.
+        """
     queryset = Enrollment.objects.all()
     serializer_class = EnrollmentSerializer
     permission_classes = [permissions.IsAuthenticated]

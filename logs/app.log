@@ -322,3 +322,49 @@ WARNING 2024-11-19 22:45:55,687 log Forbidden: /api/courses/1/
 INFO 2024-11-19 22:45:59,615 views Cache hit for user  - courses
 WARNING 2024-11-19 22:46:04,941 log Forbidden: /api/grades/1/
 WARNING 2024-11-19 22:46:04,942 log Forbidden: /api/grades/1/
+INFO 2024-11-19 22:48:56,729 autoreload C:\Programming\django-mini-project-2\attendance\views.py changed, reloading.
+INFO 2024-11-19 22:48:57,804 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:50:27,561 autoreload C:\Programming\django-mini-project-2\wsp\settings.py changed, reloading.
+INFO 2024-11-19 22:50:28,540 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:50:49,255 autoreload C:\Programming\django-mini-project-2\wsp\settings.py changed, reloading.
+INFO 2024-11-19 22:50:50,287 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:51:04,453 autoreload C:\Programming\django-mini-project-2\wsp\urls.py changed, reloading.
+INFO 2024-11-19 22:51:05,486 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:52:13,120 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:52:31,721 autoreload C:\Programming\django-mini-project-2\wsp\urls.py changed, reloading.
+INFO 2024-11-19 22:52:32,690 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:52:52,967 autoreload C:\Programming\django-mini-project-2\wsp\urls.py changed, reloading.
+INFO 2024-11-19 22:52:53,929 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:53:00,152 basehttp "GET /api/docs/ HTTP/1.1" 200 4640
+INFO 2024-11-19 22:53:01,491 basehttp "GET /api/schema/ HTTP/1.1" 200 119914
+INFO 2024-11-19 22:55:21,581 autoreload C:\Programming\django-mini-project-2\users\views.py changed, reloading.
+INFO 2024-11-19 22:55:22,912 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:55:34,773 autoreload C:\Programming\django-mini-project-2\users\views.py changed, reloading.
+INFO 2024-11-19 22:55:35,944 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:55:44,492 autoreload C:\Programming\django-mini-project-2\users\views.py changed, reloading.
+INFO 2024-11-19 22:55:45,687 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:56:07,170 autoreload C:\Programming\django-mini-project-2\students\views.py changed, reloading.
+INFO 2024-11-19 22:56:08,180 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:56:24,152 autoreload C:\Programming\django-mini-project-2\students\views.py changed, reloading.
+INFO 2024-11-19 22:56:25,177 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:56:41,102 autoreload C:\Programming\django-mini-project-2\courses\views.py changed, reloading.
+INFO 2024-11-19 22:56:42,116 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:56:50,589 autoreload C:\Programming\django-mini-project-2\courses\views.py changed, reloading.
+INFO 2024-11-19 22:56:51,575 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:56:57,907 autoreload C:\Programming\django-mini-project-2\courses\views.py changed, reloading.
+INFO 2024-11-19 22:56:58,921 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:57:32,832 autoreload C:\Programming\django-mini-project-2\grades\views.py changed, reloading.
+INFO 2024-11-19 22:57:33,813 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:57:42,258 autoreload C:\Programming\django-mini-project-2\grades\views.py changed, reloading.
+INFO 2024-11-19 22:57:43,279 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:57:57,084 autoreload C:\Programming\django-mini-project-2\attendance\views.py changed, reloading.
+INFO 2024-11-19 22:57:58,090 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:58:08,696 autoreload C:\Programming\django-mini-project-2\attendance\views.py changed, reloading.
+INFO 2024-11-19 22:58:09,634 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:58:41,446 autoreload C:\Programming\django-mini-project-2\attendance\views.py changed, reloading.
+INFO 2024-11-19 22:58:42,413 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:58:56,226 autoreload C:\Programming\django-mini-project-2\attendance\views.py changed, reloading.
+INFO 2024-11-19 22:58:57,201 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 22:58:59,908 basehttp "GET /api/docs/ HTTP/1.1" 200 4640
+INFO 2024-11-19 22:59:00,176 basehttp "GET /api/schema/ HTTP/1.1" 200 129067
+INFO 2024-11-19 22:59:14,390 basehttp "GET /api/schema/ HTTP/1.1" 200 63730
